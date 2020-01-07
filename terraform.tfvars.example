@@ -1,0 +1,23 @@
+// the name and location of the first resource group is used for the secondary resource groups and all other resources
+rg_prefix   = "sqlwithprivatelink"
+rg_location = "uksouth"
+
+// a vm is created which is used to access the sql database via private link, you can specify the variable values here
+vm_hostname          = "sourcevm"
+vm_size              = "Standard_DS2_V2"
+vm_admin_user        = "vmadmin"
+vm_admin_pwd         = "xxxxxxxxxxxxxxxx" // should be adequately complex
+vm_public_dns_prefix = "simplevmip"
+
+// networking related variable entries. net_sub entries are for sql db and for vm. net_endpoint is a seperate subnet for use to create the private link endpoint
+net_sub_cidr          = ["10.0.1.0/24", "10.0.2.0/24"]
+net_sub_name          = ["subnet1", "subnet2"]
+net_endpoint_sub_cidr = "10.0.3.0/24"
+
+// sql server and sql database variable entries. 
+sql_svr_name_prefix           = "sqlsvr"
+sql_svr_ver                   = "12.0"
+sql_admin_user                = "sqladmin"
+sql_admin_pwd                 = "xxxxxxxxxxxxxxxx" // should be adequately complex
+sql_db_edition                = "GeneralPurpose"
+sql_db_service_objective_name = "GP_S_Gen5_1" // serverless version
