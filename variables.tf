@@ -45,7 +45,7 @@ variable "vm_admin_user" {
 
   variable "net_endpoint_sub_cidr" {
  type = "string"
- description = "a comma seperated list of subnet names. two required minimum and same number as there are net_sub_cidr entries"
+ description = "the cidr of the subnet that will host the private link endpoint address"
  }
 
  variable "sql_svr_name_prefix" {
