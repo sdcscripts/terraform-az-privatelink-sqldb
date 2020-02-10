@@ -16,7 +16,7 @@ module "windowsservers" {
 
 // Following creation, can use choco to install SSMS quickly 
 /* 
-
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 # You need to run this to default TLS1.2 which the site now requires.
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 choco install sql-server-management-studio
 */
