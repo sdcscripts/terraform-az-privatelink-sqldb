@@ -6,7 +6,7 @@ rg_location = "uksouth"
 vm_hostname          = "sourcevm"
 vm_size              = "Standard_DS2_V2"
 vm_admin_user        = "vmadmin"
-vm_admin_pwd         = "xxxxxxxxxxxxxxxx" // should be adequately complex
+// vm_admin_pwd         = "" // should be adequately complex - uncomment and enter password here for auto reading at runtime
 vm_public_dns_prefix = "simplevmip"
 
 // networking related variable entries. net_sub entries are for sql db and for vm. net_endpoint is a seperate subnet for use to create the private link endpoint
