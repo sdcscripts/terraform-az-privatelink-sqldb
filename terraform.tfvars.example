@@ -18,6 +18,6 @@ net_endpoint_sub_cidr = "10.0.3.0/24"
 sql_svr_name_prefix           = "sqlsvr"
 sql_svr_ver                   = "12.0"
 sql_admin_user                = "sqladmin"
-sql_admin_pwd                 = "xxxxxxxxxxxxxxxx" // should be adequately complex
+// sql_admin_pwd         = "" // should be adequately complex - uncomment and enter password here for auto read at runtime
 sql_db_edition                = "GeneralPurpose"
 sql_db_service_objective_name = "GP_S_Gen5_1" // serverless version
