@@ -1,6 +1,7 @@
 module "windowsservers" {
   nb_instances                  = 1
   source                        = "Azure/compute/azurerm"
+  version                       = "2.0.0"
   resource_group_name           = "${azurerm_resource_group.rgmain.name}"
   location                      = "${azurerm_resource_group.rgmain.location}"
   vm_hostname                   = "${var.vm_hostname}" // line can be removed if only one VM module per resource group
