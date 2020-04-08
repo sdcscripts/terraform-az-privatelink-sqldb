@@ -1,6 +1,6 @@
 // the name and location of the first resource group is used for the secondary resource groups and all other resources
 rg_prefix   = "sqlwithprivatelink"
-rg_location = "uksouth"
+rg_location = "eastus"
 
 // a vm is created which is used to access the sql database via private link, you can specify the variable values here
 vm_hostname          = "sourcevm"
