@@ -39,17 +39,12 @@ resource "azurerm_private_dns_zone" "plink_dns_private_zone" {
 }
 
 
-data "azurerm_private_endpoint_connection" "plinkconnection" {
-  name                = "${azurerm_private_endpoint.plink.name}"
-  resource_group_name = "${azurerm_private_endpoint.plink.resource_group_name}"
-}
-
 resource "azurerm_private_dns_a_record" "private_endpoint_a_record" {
   name                = "${azurerm_sql_server.instance.name}"
   zone_name           = "${azurerm_private_dns_zone.plink_dns_private_zone.name}"
   resource_group_name = "${azurerm_private_endpoint.plink.resource_group_name}"
   ttl                 = 300
-  records             = ["${data.azurerm_private_endpoint_connection.plinkconnection.private_service_connection.0.private_ip_address}"]
+  records             = ["${resource.azurerm_private_endpoint_connection.plink.private_service_connection.0.private_ip_address}"]
 }
 
 resource "azurerm_private_dns_zone_virtual_network_link" "zone_to_vnet_link" {
@@ -60,5 +55,5 @@ resource "azurerm_private_dns_zone_virtual_network_link" "zone_to_vnet_link" {
 }
 
 output "private_link_endpoint_ip" {
-  value = "${data.azurerm_private_endpoint_connection.plinkconnection.private_service_connection.0.private_ip_address}"
+  value = "${resource.azurerm_private_endpoint_connection.plink.private_service_connection.0.private_ip_address}"
 }
